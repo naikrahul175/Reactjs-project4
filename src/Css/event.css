@@ -1,0 +1,16 @@
+.event-wrap {
+    margin: 10px 10rem 15px 10rem;
+    padding: 10px;
+    width: 35rem;
+    height: 3rem;
+    /* left:20rem; */
+    overflow: hidden;
+    align-items: center;
+    border: 2px solid white;
+    background-color: whitesmoke;
+}
+
+.event-list {
+   
+    margin: 10px 10px;
+}
