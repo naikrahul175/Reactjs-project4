@@ -1,5 +1,16 @@
 .calender {
     top:50rem;
     left:15rem;
-    
+}
+
+.calender-wrap {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.calender .react-calendar {
+    border: 2px solid yellow;
+    border-radius: 5px;
 }

@@ -2,21 +2,25 @@ import React, { useState, useEffect } from "react";
 import "../Css/modal.css";
 
 export const Modal = ({ setOpenModal ,eventRef}) => {
-  const [PublishedEvents, setPublishedEvents] = useState([{}])
+  const [Test, setTest] = useState([])
 
+  // console.log(eventRef);
   // credentials takes AuthToken from localStorage
   const credentials = localStorage.getItem("loginDetails");
   //  console.log(Object.keys(test));
   const { AuthToken } = JSON.parse(credentials);
-    // console.log(AuthToken);
+    // console.log(AuthToken);s
 
   useEffect(() => {
-    getPublishedEvents();
+    debug()
   }, []);
 
+
   const getPublishedEvents = () => {
+    // console.log("you changed me");
+
     fetch(
-      "http://139.59.63.178:5454/api/customer/getpublishedeventdetails?publishedeventref=" + eventRef,
+      "http://139.59.63.178:5454/api/customer/getpublishedeventdetails?publishedeventref=" + eventRef ,
       {
         method: "GET",
         headers: {
@@ -33,9 +37,8 @@ export const Modal = ({ setOpenModal ,eventRef}) => {
         return res.json();
       })
       .then((data) => {
-        setPublishedEvents(data.Details);
-        console.log(data);
-        // console.log(PublishedEvents);
+        setTest(data.Details);
+         console.log(Test);
       })
       .catch((err) => {
         console.error(
@@ -43,9 +46,11 @@ export const Modal = ({ setOpenModal ,eventRef}) => {
           err
         );
       });
-  };
+  }
 
-  //  console.log(PublishedEvents);
+  const debug = () => {
+    return getPublishedEvents();
+  }
 
   return (
     <div className="modalBackground">
@@ -62,17 +67,7 @@ export const Modal = ({ setOpenModal ,eventRef}) => {
         <div className="title">
           <h1>Are You Sure You Want to Continue?</h1>
         </div>
-
-          { PublishedEvents.map((data,index) => {
-              return(
-               <>
-               {console.log(data)}
-               <li key={index}>hello  </li>
-               </>
-              )
-          })
-          }
-
+      
         <div className="footer">
           <button
             onClick={() => {

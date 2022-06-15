@@ -7,18 +7,16 @@ export const Event = ({ event, setOpenModal, homeCall }) => {
     <div className="event-wrap">
       <div
         className="event-list"
-        onClick={() => {
-          setOpenModal(true);
-          return homeCall(event.PublishedEventRef);
-        }}
+        onClick={()=> homeCall(event.PublishedEventRef)
+        // setOpenModal(true); 
+        }
       >
-       {/*  data formating on screen ispending */}
-        <pre> 
+        <p> 
           Event Name: {event.EventName} <br />
           Club Name: {event.ClubName} <br />
           Date: {event.Date} <br />
           Timings: {event.Timings}
-        </pre>
+        </p>
       </div>
     </div>
   );

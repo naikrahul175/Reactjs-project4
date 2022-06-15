@@ -10,9 +10,9 @@ export const Navbar = () => {
      </div>
     <div className="navbarMiddle">
       <ul>
-       <a href=""><li>Events</li></a>
-       <a href=""><li>cart</li></a>
-       <a href=""><li>Events</li></a>
+        <li><a className="active" href="">Events</a></li>
+        <li><a href="">Cart</a></li>
+        <li><a href="">Events</a></li>
       </ul>
     </div>
      <div className="navbarRight">

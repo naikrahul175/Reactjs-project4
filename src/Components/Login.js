@@ -12,7 +12,7 @@ export const Login = ({ setLogin }) => {
       headers: {
         Authorization: "SEdRYnN6ZFFFRjpuc0oySXQ0NWt5",
         AppVersion: "1.0.0",
-        "Content-Type": "application/json",
+        "Content-Type ": "application/json"
       },
       body: JSON.stringify(phoneNumber),
     })
@@ -42,8 +42,11 @@ export const Login = ({ setLogin }) => {
 
   return (
     <div className="login-page">
+      <div className="login-heading">
+        <h3>Log In </h3>
+      </div>
+     
       <div className="login-form">
-        <label> Phone Number </label>
         <input
           type="tel"
           placeholder="Enter the Phone Number"

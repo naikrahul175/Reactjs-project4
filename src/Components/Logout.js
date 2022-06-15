@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Logout = () => {
   return (
-    <div>Logout</div>
+    <div className='logout'> 
+      <button className='btn logout'>Log out</button>
+    </div>
   )
 }

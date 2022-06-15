@@ -1,0 +1,16 @@
+.events-wrapper {
+    position: relative;
+    height: 340px;
+}
+
+.e-top {
+    position: absolute;
+    left: 30%;
+    top: 35px;
+    align-items: center;
+}
+
+.e-bottom {
+    position:relative;
+    top: 22rem;
+}

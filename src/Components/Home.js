@@ -2,29 +2,32 @@ import React, { useState } from "react";
 import { Events } from "./Events";
 import { Navbar } from "./Navbar";
 import { Modal } from "./Modal";
+import "../Css/home.css"
 
 export const Home = () => {
-  const [modalOpen, setOpenModal] = useState(false);
-  const [eventRef, setEventReft] = useState("") // state for PublishedEventRef
+  const [modalOpen, setModalOpen] = useState(false);
+  const [eventRef, setEventRef] = useState("") // state for PublishedEventRef
   
-  const setModalOpen = () => {
-    setOpenModal(false);
-  };
-          // handleCallBack => PublishedEventRef from event
-  const handleCallBack =(childData)=> {
-       setEventReft(childData); // 
+        // handleCallBack => PublishedEventRef from event
+  const handleCallBack = (childData) => {
+      //  setEventReft(childData); //
+       setEventRef(childData) 
+      // const value = childData;
+       setModalOpen(true);
+      // console.log(value);
   }
 
   return (
     <div className="home-page">
-      {modalOpen ? (
+      { modalOpen ? (
         <Modal setOpenModal={setModalOpen} eventRef={eventRef}/>
       ) : (
         <>
           <Navbar />
-          <Events setOpenModal={setOpenModal} homeCall={handleCallBack}/>
+          <Events setOpenModal={setModalOpen} homeCall={handleCallBack}/>
         </>
       )}
     </div>
   );
 };
+

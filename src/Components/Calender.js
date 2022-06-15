@@ -6,8 +6,8 @@ export const Calender = ({date,setDate,CDF}) => {
   //  console.log(date);
 
   const onChange = (date) => {
-    setDate(date); 
-   return CDF(date);
+      setDate(date); 
+     return CDF(date);
   };
 
   return (

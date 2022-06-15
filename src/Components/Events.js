@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Calender } from "./Calender";
 import { Event } from "./Event";
+import "../Css/events.css"
 
 export const Events = ({ setOpenModal, homeCall }) => {
   const [events, setEvents] = useState([]);
@@ -16,9 +17,10 @@ export const Events = ({ setOpenModal, homeCall }) => {
     convertDateFormat(date);
     // fetchEventData();
   }, []);
+
   //events data fetch
   const fetchEvents = (dt) => {
-    // console.log(dt);
+     console.log(dt);
     // dt => date
     fetch(
       "http://139.59.63.178:5454/api/customer/getallpublishedevents?Date=" + dt,
@@ -54,6 +56,7 @@ export const Events = ({ setOpenModal, homeCall }) => {
   };
   //change date as per the api needs
   const convertDateFormat = (date) => {
+    // console.log("called");
     const localDate = date.toLocaleString(); //coverted to localDate
     const result = localDate.split(","); // result => dd/mm/yy format
     const dt = result[0].replace(/[\W_]/g, "-"); // replaces "/"  with "-"
@@ -67,9 +70,9 @@ export const Events = ({ setOpenModal, homeCall }) => {
         <Calender date={date} setDate={setDate} CDF={convertDateFormat} />
       </div>
       <div className="e-bottom">
-        {events.map((list) => {
+        {events.map((list,index) => {
           return (
-            <div className="events" key={list.PublishedEventRef}>
+            <div className="events" key={index}>
               <Event
                 event={list}
                 setOpenModal={setOpenModal}

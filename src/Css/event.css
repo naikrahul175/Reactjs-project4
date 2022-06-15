@@ -1,16 +1,20 @@
 .event-wrap {
-    margin: 10px 10rem 15px 10rem;
-    padding: 10px;
-    width: 35rem;
-    height: 3rem;
-    /* left:20rem; */
+    position: relative;
+    left: 20%;
+    right: 0px;
+     margin: 10px 0 15px 0; 
+    /* padding: 10px; */
+    max-width: 550px;
+    height: 55px;
+    /* left: 20rem; */
     overflow: hidden;
-    align-items: center;
+    /* align-items: center; */
     border: 2px solid white;
     background-color: whitesmoke;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 .event-list {
-   
-    margin: 10px 10px;
+    padding: 0 0 10px 20px;
+    border: 1px solid lightblue;
 }
